@@ -84,7 +84,7 @@ FOREIGN KEY (Id_Cliente)REFERENCES DBO.cliente(Id_cliente));
 
 --creacion de la tabla cita:
 create table cita(
-id_cita int primary key,
+id_cita int IDENTITY(1,1) primary key,
 fecha datetime,
 hora int,
 Id_cliente int,
