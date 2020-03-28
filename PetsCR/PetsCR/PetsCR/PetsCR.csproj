@@ -125,11 +125,13 @@
     <Content Include="css\swiper.min.css" />
     <Content Include="css\themify-icons.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Forms\Consulta.aspx" />
     <Content Include="Forms\Dueno.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\themify.svg" />
+    <Content Include="Forms\Empleado.aspx" />
     <Content Include="Forms\Expediente.aspx" />
     <Content Include="images\arrow.png" />
     <Content Include="images\bg2.jpg" />
@@ -355,12 +357,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dueno.aspx.cs">
       <DependentUpon>Dueno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\Dueno.aspx.designer.cs">
       <DependentUpon>Dueno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Empleado.aspx.cs">
+      <DependentUpon>Empleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Empleado.aspx.designer.cs">
+      <DependentUpon>Empleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Expediente.aspx.cs">
       <DependentUpon>Expediente.aspx</DependentUpon>
