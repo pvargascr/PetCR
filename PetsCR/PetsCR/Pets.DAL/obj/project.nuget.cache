@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MqkXEPxusMFOR2mIH1ark3aOdT/BeCXSDr3omm3a80ltrxS/BhT/zclDWhWlISmMpOMAi6ZnmOgRgXKYNAzmCg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
