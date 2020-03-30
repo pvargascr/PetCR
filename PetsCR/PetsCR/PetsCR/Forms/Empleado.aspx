@@ -4,17 +4,28 @@
                    
     <asp:Label ID="Label1" runat="server" Text="Id Empleado"></asp:Label>
     <asp:TextBox ID="txtxidempleado" runat="server"></asp:TextBox>
+    <br/>
     <asp:Label ID="Label2" runat="server" Text="Nombre"></asp:Label>
     <asp:TextBox ID="txtnombre" runat="server"></asp:TextBox>
+    <br/>
     <asp:Label ID="Label3" runat="server" Text="Primer Apellido"></asp:Label>
     <asp:TextBox ID="txtapellido1" runat="server"></asp:TextBox>
+    <br/>
     <asp:Label ID="Label4" runat="server" Text="Segundo Apellido"></asp:Label>
     <asp:TextBox ID="txtapellido2" runat="server"></asp:TextBox>
+    <br/>
     <asp:Label ID="Label5" runat="server" Text="Salario"></asp:Label>
     <asp:TextBox ID="txtsalario" runat="server"></asp:TextBox>
 
+    <br/>
+    <br/>
+   
 
-    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" />
+     <tr>
+            <td  >
+    <asp:Button  ID="btnAgregar" runat="server" Text="Agregar" />
+                  </td>
+        </tr>
     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
     <asp:Button ID="btnEditar" runat="server" Text="Editar" />
     <asp:Button ID="btnConsulta" runat="server" Text="Consultar" />
