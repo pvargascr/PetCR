@@ -1,13 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mascotas.aspx.cs" Inherits="PetsCR.Forms.Mascotas" MasterPageFile="~/Site.Master"%>
-
+  
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-                   
+                      <link href="../css/style.css" rel="stylesheet" />
     <asp:Label ID="Label1" runat="server" Text="Id Empleado"></asp:Label>
-    <asp:TextBox ID="txtxidempleado" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtidempleado" runat="server"></asp:TextBox>
     <br/>
     <asp:Label ID="Label2" runat="server" Text="Nombre"></asp:Label>
     <asp:TextBox ID="txtnombre" runat="server"></asp:TextBox>
-    <br/>
+    <%--<br/>--%>
     <asp:Label ID="Label3" runat="server" Text="Primer Apellido"></asp:Label>
     <asp:TextBox ID="txtapellido1" runat="server"></asp:TextBox>
     <br/>
@@ -23,6 +23,7 @@
 
      <tr>
             <td  >
+      
     <asp:Button  ID="btnAgregar" runat="server" Text="Agregar" />
                   </td>
         </tr>

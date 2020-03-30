@@ -1,9 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mascotas.aspx.cs" Inherits="PetsCR.Forms.Mascotas" MasterPageFile="~/Site.Master"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-                   
+ <link href="../css/style.css" rel="stylesheet" />
+
       <asp:Label ID="Label1" runat="server" Text="Id Consulta"></asp:Label>
-    <asp:TextBox ID="txtxidconsulta" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtidconsulta" runat="server"></asp:TextBox>
     <br/>
     <asp:Label ID="Label2" runat="server" Text="Id Cita"></asp:Label>
     <asp:TextBox ID="txtidcita" runat="server"></asp:TextBox>

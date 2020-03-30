@@ -24,13 +24,13 @@ namespace PetsCR.Forms
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// txtxidempleado control.
+        /// txtidconsulta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtxidempleado;
+        protected global::System.Web.UI.WebControls.TextBox txtidconsulta;
 
         /// <summary>
         /// Label2 control.
@@ -42,13 +42,13 @@ namespace PetsCR.Forms
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// txtnombre control.
+        /// txtidcita control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtnombre;
+        protected global::System.Web.UI.WebControls.TextBox txtidcita;
 
         /// <summary>
         /// Label3 control.
@@ -60,13 +60,13 @@ namespace PetsCR.Forms
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// txtapellido1 control.
+        /// txtidventa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtapellido1;
+        protected global::System.Web.UI.WebControls.TextBox txtidventa;
 
         /// <summary>
         /// Label4 control.
@@ -78,13 +78,13 @@ namespace PetsCR.Forms
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// txtapellido2 control.
+        /// txtidempleado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtapellido2;
+        protected global::System.Web.UI.WebControls.TextBox txtidempleado;
 
         /// <summary>
         /// Label5 control.
@@ -96,13 +96,13 @@ namespace PetsCR.Forms
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// txtsalario control.
+        /// txtidmascota control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsalario;
+        protected global::System.Web.UI.WebControls.TextBox txtidmascota;
 
         /// <summary>
         /// btnAgregar control.
