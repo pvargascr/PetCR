@@ -195,27 +195,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JOSEBETH\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Moisés\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
       "projectName": "Pets.DAL",
-      "projectPath": "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
-      "packagesPath": "C:\\Users\\JOSEBETH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\obj\\",
+      "projectPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+      "packagesPath": "C:\\Users\\Moisés\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\JOSEBETH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Moisés\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -227,8 +220,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
-              "projectPath": "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj"
+            "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
+              "projectPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj"
             }
           }
         }
@@ -259,7 +252,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
