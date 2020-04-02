@@ -195,19 +195,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Moisés\\.nuget\\packages\\": {}
+    "C:\\Users\\Moises\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
       "projectName": "Pets.DAL",
-      "projectPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
-      "packagesPath": "C:\\Users\\Moisés\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\obj\\",
+      "projectPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+      "packagesPath": "C:\\Users\\Moises\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Moisés\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Moises\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -220,8 +220,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
-              "projectPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj"
+            "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
+              "projectPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj"
             }
           }
         }

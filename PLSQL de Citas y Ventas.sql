@@ -14,7 +14,32 @@ AS
 
 		IF @@FETCH_STATUS <> 0
 			RAISERROR('No existe este id en nuestra lista de clientes.', 20, -1) WITH LOG
+		CLOSE cita_cursor
+		DEALLOCATE cita_cursor
 		
 		INSERT INTO cita VALUES(CONVERT(DATETIME, @fecha), @hora, @v_id_cliente)
 	END
+GO
+
+CREATE OR ALTER PROCEDURE ctsActualizarCita
+	@fecha DATETIME,
+	@hora INT,
+	@id_cliente INT
+AS
+	DECLARE @varFecha DATETIME
+	DECLARE @varHora INT
+	DECLARE @varId INT
+	DECLARE cursor_verificar CURSOR FOR
+	SELECT fecha, hora, id_cliente FROM cita WHERE id_cliente = @id_cliente;
+	OPEN cursor_verificar
+		FETCH NEXT FROM cursor_verificar INTO @varFecha, @varHora, @varId
+		IF @@FETCH_STATUS <> 0
+			RAISERROR('No se asignó una cita con este id.', 20, -1) WITH LOG
+	CLOSE cursor_verificar
+	DEALLOCATE cursor_verificar
+
+	IF @varFecha = @fecha OR @varHora = @hora
+		RAISERROR('Hay datos que se repiten.', 20, -1) WITH LOG
+	ELSE
+		UPDATE cita SET fecha = CONVERT(DATETIME, @fecha), hora = @hora WHERE Id_cliente = @varId;
 GO

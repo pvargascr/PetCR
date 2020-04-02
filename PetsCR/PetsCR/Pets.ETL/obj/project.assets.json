@@ -179,19 +179,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Moisés\\.nuget\\packages\\": {}
+    "C:\\Users\\Moises\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
+      "projectUniqueName": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
       "projectName": "Pets.ETL",
-      "projectPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
-      "packagesPath": "C:\\Users\\Moisés\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Moisés\\Documents\\ProyectoPrograAvanzada\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\obj\\",
+      "projectPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
+      "packagesPath": "C:\\Users\\Moises\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Moisés\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Moises\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
