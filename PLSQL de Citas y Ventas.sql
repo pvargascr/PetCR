@@ -45,3 +45,9 @@ AS
 	ELSE
 		UPDATE cita SET fecha = CONVERT(DATETIME, @fecha), hora = @hora WHERE Id_cliente = @varId;
 GO
+
+CREATE OR ALTER PROCEDURE ctsBorrarCita
+	@id_cliente INT
+AS
+	DELETE FROM cita WHERE Id_cliente = @id_cliente;
+GO
