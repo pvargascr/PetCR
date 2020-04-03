@@ -11,32 +11,38 @@ namespace PetsCR.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                obtenerCitas();
+            }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) //GridDetallesCita
+        private void obtenerCitas()
         {
-
+            var datos = new DatosPetStoreDataContext();
+            GridCitas.DataSource = datos.ctsCargarCitas();
+            GridCitas.DataBind();
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e) //TbFecha
+        protected void GridCitas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            GridCitas.PageIndex = e.NewPageIndex;
+            obtenerCitas();
         }
 
-        protected void TextBox2_TextChanged(object sender, EventArgs e) //TbHora
+        protected void GridCitas_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
+            GridCitas.EditIndex = e.NewEditIndex;
+            obtenerCitas();
         }
 
-        protected void TextBox3_TextChanged(object sender, EventArgs e) //TbIdentificacion
+        protected void GridCitas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            string fecha;
+            int hora, id_cliente;
+            TextBox txt = new TextBox();
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e) //BotonAgregar
-        {
-
+            //txt = (TextBox)GridCitas.Rows[]
         }
     }
 }

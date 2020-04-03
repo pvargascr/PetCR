@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DatosPetStore">
+  <DataContextMoniker Name="/DatosPetStoreDataContext" />
+  <nestedChildShapes>
+    <classShape Id="50ec819f-52ea-4f77-9d9f-ac47ff7acd63" absoluteBounds="3.625, 2.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DatosPetStoreDataContext/cita" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3dfe1bfd-d814-49f0-9573-6309a5653286" absoluteBounds="3.6399999999999997, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -15,43 +15,69 @@
         </p>
         <p>
             Citas programadas:</p>
-        <p>
-            <asp:GridView ID="GridDetallesCita" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="210px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="905px">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <p id="GridCitas">
+            <asp:GridView ID="GridCitas" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridCitas_PageIndexChanging" PageSize="5" OnRowEditing="GridCitas_RowEditing">
                 <Columns>
-                    <asp:BoundField HeaderText="Código de la cita" />
-                    <asp:BoundField HeaderText="Fecha" />
-                    <asp:BoundField HeaderText="Hora" />
-                    <asp:BoundField HeaderText="Identificación del cliente" />
-                    <asp:CommandField ButtonType="Button" CancelText="Cancelar" DeleteText="Borrar" EditText="Actualizar" HeaderText="Acciones" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" />
+                    <asp:TemplateField HeaderText="Código de cita">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("id_cita") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("id_cita") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Fecha de la cita">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("fecha") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("fecha") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Hora de la cita">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("hora") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("hora") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Identificación del cliente">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Id_cliente") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("Id_cliente") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField ShowHeader="False">
+                        <EditItemTemplate>
+                            <asp:Button ID="Button1" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                            &nbsp;<asp:Button ID="Button2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Button ID="Button1" runat="server" CausesValidation="False" CommandName="Edit" Text="Actualizar" />
+                            &nbsp;<asp:Button ID="Button2" runat="server" CausesValidation="False" CommandName="Delete" Text="Borrar" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
         </p>
         <p>
             Agregar una nueva cita</p>
         <p>
             Fecha de la cita:
-            <asp:TextBox ID="TbFecha" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TbFecha" runat="server"></asp:TextBox>
         </p>
         <p>
             Hora de presentación:
-            <asp:TextBox ID="TbHora" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TbHora" runat="server"></asp:TextBox>
         </p>
         <p>
             Identificación del cliente:
-            <asp:TextBox ID="TbIdentificacion" runat="server" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TbIdentificacion" runat="server"></asp:TextBox>
         </p>
-        <asp:Button ID="BotonAgregar" runat="server" OnClick="Button1_Click" Text="AGREGAR" />
+        <asp:Button ID="BotonAgregar" runat="server" Text="AGREGAR" />
     </form>
 </body>
 </html>
