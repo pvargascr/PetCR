@@ -51,3 +51,9 @@ CREATE OR ALTER PROCEDURE ctsBorrarCita
 AS
 	DELETE FROM cita WHERE Id_cliente = @id_cliente;
 GO
+
+--NECESARIO PARA EL GRIDVIEW 
+CREATE OR ALTER PROCEDURE ctsCargarCitas
+AS
+	SELECT * FROM cita;
+GO
