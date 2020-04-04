@@ -1,0 +1,15 @@
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\PetCRWEB.DAL.deps.json
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\PetCRWEB.DAL.dll
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\PetCRWEB.DAL.pdb
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\PetCRWEB.ETL.dll
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\PetCRWEB.ETL.pdb
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\bin\Debug\netstandard2.0\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\obj\Debug\netstandard2.0\PetCRWEB.DAL.csprojAssemblyReference.cache
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\obj\Debug\netstandard2.0\PetCRWEB.DAL.AssemblyInfoInputs.cache
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\obj\Debug\netstandard2.0\PetCRWEB.DAL.AssemblyInfo.cs
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\obj\Debug\netstandard2.0\PetCRWEB.DAL.csproj.CopyComplete
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\obj\Debug\netstandard2.0\PetCRWEB.DAL.dll
+C:\Users\Varsandrey\source\repos\PetCRWEB.DAL\obj\Debug\netstandard2.0\PetCRWEB.DAL.pdb
