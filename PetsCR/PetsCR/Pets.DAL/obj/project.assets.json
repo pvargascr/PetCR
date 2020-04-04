@@ -195,19 +195,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Varsandrey\\.nuget\\packages\\": {}
+    "C:\\Users\\Moises\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
       "projectName": "Pets.DAL",
-      "projectPath": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
-      "packagesPath": "C:\\Users\\Varsandrey\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\obj\\",
+      "projectPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\Pets.DAL.csproj",
+      "packagesPath": "C:\\Users\\Moises\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Varsandrey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Moises\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -220,8 +220,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
-              "projectPath": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj"
+            "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
+              "projectPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj"
             }
           }
         }
