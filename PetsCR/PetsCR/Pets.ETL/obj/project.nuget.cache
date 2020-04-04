@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+SoMmK6+kS2OdzTaF15zfyyXbn8aiWFfIHSZ0Vb4K+y62FAKkbYeXtKfmI482Bhc3XP9NetYaN5pw/B/QPMyEg==",
+  "dgSpecHash": "XFG9w7BjcgfE3NW7YED09w5n/yAB619zSUK7pOAejQ+LnPrP8J1XxeHg2D4IZsQftAx0u2LUKiA4IhSokIT3eQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JOSEBETH\\Desktop\\Progra 4\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
+  "projectFilePath": "C:\\Users\\danie\\Desktop\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\danie\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
