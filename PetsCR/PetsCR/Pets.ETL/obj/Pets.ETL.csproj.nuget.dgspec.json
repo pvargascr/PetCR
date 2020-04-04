@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {}
+    "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
+    "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
+        "projectUniqueName": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
         "projectName": "Pets.ETL",
-        "projectPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
-        "packagesPath": "C:\\Users\\Moises\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Moises\\Source\\Repos\\pvargascr\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\obj\\",
+        "projectPath": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\Pets.ETL.csproj",
+        "packagesPath": "C:\\Users\\Varsandrey\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Varsandrey\\Documents\\GitHub\\PetCR\\PetsCR\\PetsCR\\Pets.ETL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Moises\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Varsandrey\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
