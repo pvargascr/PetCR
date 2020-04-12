@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pet_StoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bitacora_login">
+    <Key>
+      <PropertyRef Name="Id_Bitacora" />
+    </Key>
+    <Property Name="Id_Bitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="hora" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="id_cita" />
+    </Key>
+    <Property Name="id_cita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="hora" Type="Int32" />
+    <Property Name="Id_cliente" Type="Int32" />
+    <NavigationProperty Name="cliente" Relationship="Self.FK__cita__Id_cliente__5629CD9C" FromRole="cita" ToRole="cliente" />
+    <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__id_cit__59063A47" FromRole="cita" ToRole="consulta" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apellido1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="citas" Relationship="Self.FK__cita__Id_cliente__5629CD9C" FromRole="cliente" ToRole="cita" />
+    <NavigationProperty Name="mascotas" Relationship="Self.FK__mascota__Id_clie__534D60F1" FromRole="cliente" ToRole="mascota" />
+  </EntityType>
+  <EntityType Name="consulta">
+    <Key>
+      <PropertyRef Name="Id_consulta" />
+    </Key>
+    <Property Name="Id_consulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cita" Type="Int32" />
+    <Property Name="Id_Venta" Type="Int32" />
+    <Property Name="Id_Empleado" Type="Int32" />
+    <Property Name="id_mascota" Type="Int32" />
+    <NavigationProperty Name="cita" Relationship="Self.FK__consulta__id_cit__59063A47" FromRole="consulta" ToRole="cita" />
+    <NavigationProperty Name="empleado" Relationship="Self.FK__consulta__Id_Emp__5AEE82B9" FromRole="consulta" ToRole="empleado" />
+    <NavigationProperty Name="mascota" Relationship="Self.FK__consulta__id_mas__5BE2A6F2" FromRole="consulta" ToRole="mascota" />
+    <NavigationProperty Name="venta" Relationship="Self.FK__consulta__Id_Ven__59FA5E80" FromRole="consulta" ToRole="venta" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="Id_Empleado" />
+    </Key>
+    <Property Name="Id_Empleado" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apellido1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="salario" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__Id_Emp__5AEE82B9" FromRole="empleado" ToRole="consulta" />
+  </EntityType>
+  <EntityType Name="mascota">
+    <Key>
+      <PropertyRef Name="id_mascota" />
+    </Key>
+    <Property Name="id_mascota" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="raza" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="Id_cliente" Type="Int32" />
+    <NavigationProperty Name="cliente" Relationship="Self.FK__mascota__Id_clie__534D60F1" FromRole="mascota" ToRole="cliente" />
+    <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__id_mas__5BE2A6F2" FromRole="mascota" ToRole="consulta" />
+  </EntityType>
+  <EntityType Name="venta">
+    <Key>
+      <PropertyRef Name="Id_Venta" />
+    </Key>
+    <Property Name="Id_Venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="costo_bruto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="costo_neto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__Id_Ven__59FA5E80" FromRole="venta" ToRole="consulta" />
+  </EntityType>
+  <Association Name="FK__cita__Id_cliente__5629CD9C">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="cita" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="Id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__id_cit__59063A47">
+    <End Role="cita" Type="Self.cita" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cita">
+        <PropertyRef Name="id_cita" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="id_cita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mascota__Id_clie__534D60F1">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="mascota" Type="Self.mascota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="mascota">
+        <PropertyRef Name="Id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__Id_Emp__5AEE82B9">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__id_mas__5BE2A6F2">
+    <End Role="mascota" Type="Self.mascota" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mascota">
+        <PropertyRef Name="id_mascota" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="id_mascota" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__Id_Ven__59FA5E80">
+    <End Role="venta" Type="Self.venta" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venta">
+        <PropertyRef Name="Id_Venta" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="Id_Venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Pet_StoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bitacora_login" EntityType="Self.bitacora_login" />
+    <EntitySet Name="citas" EntityType="Self.cita" />
+    <EntitySet Name="clientes" EntityType="Self.cliente" />
+    <EntitySet Name="consultas" EntityType="Self.consulta" />
+    <EntitySet Name="empleadoes" EntityType="Self.empleado" />
+    <EntitySet Name="mascotas" EntityType="Self.mascota" />
+    <EntitySet Name="ventas" EntityType="Self.venta" />
+    <AssociationSet Name="FK__cita__Id_cliente__5629CD9C" Association="Self.FK__cita__Id_cliente__5629CD9C">
+      <End Role="cliente" EntitySet="clientes" />
+      <End Role="cita" EntitySet="citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__id_cit__59063A47" Association="Self.FK__consulta__id_cit__59063A47">
+      <End Role="cita" EntitySet="citas" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__Id_clie__534D60F1" Association="Self.FK__mascota__Id_clie__534D60F1">
+      <End Role="cliente" EntitySet="clientes" />
+      <End Role="mascota" EntitySet="mascotas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__Id_Emp__5AEE82B9" Association="Self.FK__consulta__Id_Emp__5AEE82B9">
+      <End Role="empleado" EntitySet="empleadoes" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__id_mas__5BE2A6F2" Association="Self.FK__consulta__id_mas__5BE2A6F2">
+      <End Role="mascota" EntitySet="mascotas" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__Id_Ven__59FA5E80" Association="Self.FK__consulta__Id_Ven__59FA5E80">
+      <End Role="venta" EntitySet="ventas" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

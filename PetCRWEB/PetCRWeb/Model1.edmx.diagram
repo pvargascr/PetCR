@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be69b261a50f4493bfddf6a7492b5ee7" Name="Diagram1">
+        <EntityTypeShape EntityType="Pet_StoreModel.bitacora_login" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pet_StoreModel.cita" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pet_StoreModel.cliente" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pet_StoreModel.consulta" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pet_StoreModel.empleado" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pet_StoreModel.mascota" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pet_StoreModel.venta" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="Pet_StoreModel.FK__cita__Id_cliente__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="Pet_StoreModel.FK__consulta__id_cit__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="Pet_StoreModel.FK__mascota__Id_clie__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="Pet_StoreModel.FK__consulta__Id_Emp__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="Pet_StoreModel.FK__consulta__id_mas__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="Pet_StoreModel.FK__consulta__Id_Ven__59FA5E80" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

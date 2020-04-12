@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pet_StoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bitacora_login">
+    <Key>
+      <PropertyRef Name="Id_Bitacora" />
+    </Key>
+    <Property Name="Id_Bitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="100" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="hora" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="id_cita" />
+    </Key>
+    <Property Name="id_cita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="hora" Type="int" />
+    <Property Name="Id_cliente" Type="int" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Cliente" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="20" />
+    <Property Name="apellido1" Type="varchar" MaxLength="20" />
+    <Property Name="apellido2" Type="varchar" MaxLength="20" />
+    <Property Name="correo" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="domicilio" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="consulta">
+    <Key>
+      <PropertyRef Name="Id_consulta" />
+    </Key>
+    <Property Name="Id_consulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cita" Type="int" />
+    <Property Name="Id_Venta" Type="int" />
+    <Property Name="Id_Empleado" Type="int" />
+    <Property Name="id_mascota" Type="int" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="Id_Empleado" />
+    </Key>
+    <Property Name="Id_Empleado" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="20" />
+    <Property Name="apellido1" Type="varchar" MaxLength="20" />
+    <Property Name="apellido2" Type="varchar" MaxLength="20" />
+    <Property Name="salario" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Pet_Store.dbo.empleado_login' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="empleado_login">
+          <Property Name="Id_Empleado" Type="int" />
+          <Property Name="correo" Type="varchar" MaxLength="100" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="mascota">
+    <Key>
+      <PropertyRef Name="id_mascota" />
+    </Key>
+    <Property Name="id_mascota" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="20" />
+    <Property Name="raza" Type="varchar" MaxLength="20" />
+    <Property Name="edad" Type="int" />
+    <Property Name="Id_cliente" Type="int" />
+  </EntityType>
+  <EntityType Name="venta">
+    <Key>
+      <PropertyRef Name="Id_Venta" />
+    </Key>
+    <Property Name="Id_Venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="costo_bruto" Type="money" />
+    <Property Name="costo_neto" Type="money" />
+    <Property Name="tipo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__cita__Id_cliente__5629CD9C">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="cita" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="Id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__id_cit__59063A47">
+    <End Role="cita" Type="Self.cita" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cita">
+        <PropertyRef Name="id_cita" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="id_cita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__Id_Emp__5AEE82B9">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__id_mas__5BE2A6F2">
+    <End Role="mascota" Type="Self.mascota" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mascota">
+        <PropertyRef Name="id_mascota" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="id_mascota" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__consulta__Id_Ven__59FA5E80">
+    <End Role="venta" Type="Self.venta" Multiplicity="0..1" />
+    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venta">
+        <PropertyRef Name="Id_Venta" />
+      </Principal>
+      <Dependent Role="consulta">
+        <PropertyRef Name="Id_Venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'Pet_Store.dbo.empleado_login' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__empleado___Id_Em__4E88ABD4" />-->
+  <Association Name="FK__mascota__Id_clie__534D60F1">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="mascota" Type="Self.mascota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="mascota">
+        <PropertyRef Name="Id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Pet_StoreModelStoreContainer">
+    <EntitySet Name="bitacora_login" EntityType="Self.bitacora_login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cita" EntityType="Self.cita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consulta" EntityType="Self.consulta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mascota" EntityType="Self.mascota" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__cita__Id_cliente__5629CD9C" Association="Self.FK__cita__Id_cliente__5629CD9C">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__id_cit__59063A47" Association="Self.FK__consulta__id_cit__59063A47">
+      <End Role="cita" EntitySet="cita" />
+      <End Role="consulta" EntitySet="consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__Id_Emp__5AEE82B9" Association="Self.FK__consulta__Id_Emp__5AEE82B9">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="consulta" EntitySet="consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__id_mas__5BE2A6F2" Association="Self.FK__consulta__id_mas__5BE2A6F2">
+      <End Role="mascota" EntitySet="mascota" />
+      <End Role="consulta" EntitySet="consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__consulta__Id_Ven__59FA5E80" Association="Self.FK__consulta__Id_Ven__59FA5E80">
+      <End Role="venta" EntitySet="venta" />
+      <End Role="consulta" EntitySet="consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__Id_clie__534D60F1" Association="Self.FK__mascota__Id_clie__534D60F1">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="mascota" EntitySet="mascota" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Pet_StoreModelStoreContainer" CdmEntityContainer="Pet_StoreEntities">
+    <EntitySetMapping Name="bitacora_login">
+      <EntityTypeMapping TypeName="Pet_StoreModel.bitacora_login">
+        <MappingFragment StoreEntitySet="bitacora_login">
+          <ScalarProperty Name="Id_Bitacora" ColumnName="Id_Bitacora" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="citas">
+      <EntityTypeMapping TypeName="Pet_StoreModel.cita">
+        <MappingFragment StoreEntitySet="cita">
+          <ScalarProperty Name="id_cita" ColumnName="id_cita" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="Pet_StoreModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="domicilio" ColumnName="domicilio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consultas">
+      <EntityTypeMapping TypeName="Pet_StoreModel.consulta">
+        <MappingFragment StoreEntitySet="consulta">
+          <ScalarProperty Name="Id_consulta" ColumnName="Id_consulta" />
+          <ScalarProperty Name="id_cita" ColumnName="id_cita" />
+          <ScalarProperty Name="Id_Venta" ColumnName="Id_Venta" />
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="id_mascota" ColumnName="id_mascota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleadoes">
+      <EntityTypeMapping TypeName="Pet_StoreModel.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+          <ScalarProperty Name="salario" ColumnName="salario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mascotas">
+      <EntityTypeMapping TypeName="Pet_StoreModel.mascota">
+        <MappingFragment StoreEntitySet="mascota">
+          <ScalarProperty Name="id_mascota" ColumnName="id_mascota" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="raza" ColumnName="raza" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ventas">
+      <EntityTypeMapping TypeName="Pet_StoreModel.venta">
+        <MappingFragment StoreEntitySet="venta">
+          <ScalarProperty Name="Id_Venta" ColumnName="Id_Venta" />
+          <ScalarProperty Name="costo_bruto" ColumnName="costo_bruto" />
+          <ScalarProperty Name="costo_neto" ColumnName="costo_neto" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

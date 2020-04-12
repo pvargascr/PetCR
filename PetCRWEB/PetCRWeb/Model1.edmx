@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Pet_StoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bitacora_login">
+          <Key>
+            <PropertyRef Name="Id_Bitacora" />
+          </Key>
+          <Property Name="Id_Bitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="100" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="hora" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="cita">
+          <Key>
+            <PropertyRef Name="id_cita" />
+          </Key>
+          <Property Name="id_cita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="hora" Type="int" />
+          <Property Name="Id_cliente" Type="int" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="20" />
+          <Property Name="apellido1" Type="varchar" MaxLength="20" />
+          <Property Name="apellido2" Type="varchar" MaxLength="20" />
+          <Property Name="correo" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="int" />
+          <Property Name="domicilio" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="consulta">
+          <Key>
+            <PropertyRef Name="Id_consulta" />
+          </Key>
+          <Property Name="Id_consulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_cita" Type="int" />
+          <Property Name="Id_Venta" Type="int" />
+          <Property Name="Id_Empleado" Type="int" />
+          <Property Name="id_mascota" Type="int" />
+        </EntityType>
+        <EntityType Name="empleado">
+          <Key>
+            <PropertyRef Name="Id_Empleado" />
+          </Key>
+          <Property Name="Id_Empleado" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="20" />
+          <Property Name="apellido1" Type="varchar" MaxLength="20" />
+          <Property Name="apellido2" Type="varchar" MaxLength="20" />
+          <Property Name="salario" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Pet_Store.dbo.empleado_login' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="empleado_login">
+          <Property Name="Id_Empleado" Type="int" />
+          <Property Name="correo" Type="varchar" MaxLength="100" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="mascota">
+          <Key>
+            <PropertyRef Name="id_mascota" />
+          </Key>
+          <Property Name="id_mascota" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="20" />
+          <Property Name="raza" Type="varchar" MaxLength="20" />
+          <Property Name="edad" Type="int" />
+          <Property Name="Id_cliente" Type="int" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="Id_Venta" />
+          </Key>
+          <Property Name="Id_Venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="costo_bruto" Type="money" />
+          <Property Name="costo_neto" Type="money" />
+          <Property Name="tipo" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__cita__Id_cliente__5629CD9C">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="cita" Type="Self.cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="Id_Cliente" />
+            </Principal>
+            <Dependent Role="cita">
+              <PropertyRef Name="Id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__id_cit__59063A47">
+          <End Role="cita" Type="Self.cita" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cita">
+              <PropertyRef Name="id_cita" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="id_cita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__Id_Emp__5AEE82B9">
+          <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleado">
+              <PropertyRef Name="Id_Empleado" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="Id_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__id_mas__5BE2A6F2">
+          <End Role="mascota" Type="Self.mascota" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mascota">
+              <PropertyRef Name="id_mascota" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="id_mascota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__Id_Ven__59FA5E80">
+          <End Role="venta" Type="Self.venta" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venta">
+              <PropertyRef Name="Id_Venta" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="Id_Venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'Pet_Store.dbo.empleado_login' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__empleado___Id_Em__4E88ABD4" />-->
+        <Association Name="FK__mascota__Id_clie__534D60F1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="mascota" Type="Self.mascota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="Id_Cliente" />
+            </Principal>
+            <Dependent Role="mascota">
+              <PropertyRef Name="Id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Pet_StoreModelStoreContainer">
+          <EntitySet Name="bitacora_login" EntityType="Self.bitacora_login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cita" EntityType="Self.cita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="consulta" EntityType="Self.consulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mascota" EntityType="Self.mascota" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__cita__Id_cliente__5629CD9C" Association="Self.FK__cita__Id_cliente__5629CD9C">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="cita" EntitySet="cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__id_cit__59063A47" Association="Self.FK__consulta__id_cit__59063A47">
+            <End Role="cita" EntitySet="cita" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__Id_Emp__5AEE82B9" Association="Self.FK__consulta__Id_Emp__5AEE82B9">
+            <End Role="empleado" EntitySet="empleado" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__id_mas__5BE2A6F2" Association="Self.FK__consulta__id_mas__5BE2A6F2">
+            <End Role="mascota" EntitySet="mascota" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__Id_Ven__59FA5E80" Association="Self.FK__consulta__Id_Ven__59FA5E80">
+            <End Role="venta" EntitySet="venta" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__mascota__Id_clie__534D60F1" Association="Self.FK__mascota__Id_clie__534D60F1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="mascota" EntitySet="mascota" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Pet_StoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bitacora_login">
+          <Key>
+            <PropertyRef Name="Id_Bitacora" />
+          </Key>
+          <Property Name="Id_Bitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="hora" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="cita">
+          <Key>
+            <PropertyRef Name="id_cita" />
+          </Key>
+          <Property Name="id_cita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="hora" Type="Int32" />
+          <Property Name="Id_cliente" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.FK__cita__Id_cliente__5629CD9C" FromRole="cita" ToRole="cliente" />
+          <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__id_cit__59063A47" FromRole="cita" ToRole="consulta" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="Int32" />
+          <Property Name="domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="citas" Relationship="Self.FK__cita__Id_cliente__5629CD9C" FromRole="cliente" ToRole="cita" />
+          <NavigationProperty Name="mascotas" Relationship="Self.FK__mascota__Id_clie__534D60F1" FromRole="cliente" ToRole="mascota" />
+        </EntityType>
+        <EntityType Name="consulta">
+          <Key>
+            <PropertyRef Name="Id_consulta" />
+          </Key>
+          <Property Name="Id_consulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cita" Type="Int32" />
+          <Property Name="Id_Venta" Type="Int32" />
+          <Property Name="Id_Empleado" Type="Int32" />
+          <Property Name="id_mascota" Type="Int32" />
+          <NavigationProperty Name="cita" Relationship="Self.FK__consulta__id_cit__59063A47" FromRole="consulta" ToRole="cita" />
+          <NavigationProperty Name="empleado" Relationship="Self.FK__consulta__Id_Emp__5AEE82B9" FromRole="consulta" ToRole="empleado" />
+          <NavigationProperty Name="mascota" Relationship="Self.FK__consulta__id_mas__5BE2A6F2" FromRole="consulta" ToRole="mascota" />
+          <NavigationProperty Name="venta" Relationship="Self.FK__consulta__Id_Ven__59FA5E80" FromRole="consulta" ToRole="venta" />
+        </EntityType>
+        <EntityType Name="empleado">
+          <Key>
+            <PropertyRef Name="Id_Empleado" />
+          </Key>
+          <Property Name="Id_Empleado" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="salario" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__Id_Emp__5AEE82B9" FromRole="empleado" ToRole="consulta" />
+        </EntityType>
+        <EntityType Name="mascota">
+          <Key>
+            <PropertyRef Name="id_mascota" />
+          </Key>
+          <Property Name="id_mascota" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="raza" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="Id_cliente" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.FK__mascota__Id_clie__534D60F1" FromRole="mascota" ToRole="cliente" />
+          <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__id_mas__5BE2A6F2" FromRole="mascota" ToRole="consulta" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="Id_Venta" />
+          </Key>
+          <Property Name="Id_Venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="costo_bruto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="costo_neto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="consultas" Relationship="Self.FK__consulta__Id_Ven__59FA5E80" FromRole="venta" ToRole="consulta" />
+        </EntityType>
+        <Association Name="FK__cita__Id_cliente__5629CD9C">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="cita" Type="Self.cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="Id_Cliente" />
+            </Principal>
+            <Dependent Role="cita">
+              <PropertyRef Name="Id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__id_cit__59063A47">
+          <End Role="cita" Type="Self.cita" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cita">
+              <PropertyRef Name="id_cita" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="id_cita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__mascota__Id_clie__534D60F1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="mascota" Type="Self.mascota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="Id_Cliente" />
+            </Principal>
+            <Dependent Role="mascota">
+              <PropertyRef Name="Id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__Id_Emp__5AEE82B9">
+          <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleado">
+              <PropertyRef Name="Id_Empleado" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="Id_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__id_mas__5BE2A6F2">
+          <End Role="mascota" Type="Self.mascota" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mascota">
+              <PropertyRef Name="id_mascota" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="id_mascota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__consulta__Id_Ven__59FA5E80">
+          <End Role="venta" Type="Self.venta" Multiplicity="0..1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venta">
+              <PropertyRef Name="Id_Venta" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="Id_Venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Pet_StoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bitacora_login" EntityType="Self.bitacora_login" />
+          <EntitySet Name="citas" EntityType="Self.cita" />
+          <EntitySet Name="clientes" EntityType="Self.cliente" />
+          <EntitySet Name="consultas" EntityType="Self.consulta" />
+          <EntitySet Name="empleadoes" EntityType="Self.empleado" />
+          <EntitySet Name="mascotas" EntityType="Self.mascota" />
+          <EntitySet Name="ventas" EntityType="Self.venta" />
+          <AssociationSet Name="FK__cita__Id_cliente__5629CD9C" Association="Self.FK__cita__Id_cliente__5629CD9C">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="cita" EntitySet="citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__id_cit__59063A47" Association="Self.FK__consulta__id_cit__59063A47">
+            <End Role="cita" EntitySet="citas" />
+            <End Role="consulta" EntitySet="consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__mascota__Id_clie__534D60F1" Association="Self.FK__mascota__Id_clie__534D60F1">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="mascota" EntitySet="mascotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__Id_Emp__5AEE82B9" Association="Self.FK__consulta__Id_Emp__5AEE82B9">
+            <End Role="empleado" EntitySet="empleadoes" />
+            <End Role="consulta" EntitySet="consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__id_mas__5BE2A6F2" Association="Self.FK__consulta__id_mas__5BE2A6F2">
+            <End Role="mascota" EntitySet="mascotas" />
+            <End Role="consulta" EntitySet="consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__consulta__Id_Ven__59FA5E80" Association="Self.FK__consulta__Id_Ven__59FA5E80">
+            <End Role="venta" EntitySet="ventas" />
+            <End Role="consulta" EntitySet="consultas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Pet_StoreModelStoreContainer" CdmEntityContainer="Pet_StoreEntities">
+          <EntitySetMapping Name="bitacora_login">
+            <EntityTypeMapping TypeName="Pet_StoreModel.bitacora_login">
+              <MappingFragment StoreEntitySet="bitacora_login">
+                <ScalarProperty Name="Id_Bitacora" ColumnName="Id_Bitacora" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="citas">
+            <EntityTypeMapping TypeName="Pet_StoreModel.cita">
+              <MappingFragment StoreEntitySet="cita">
+                <ScalarProperty Name="id_cita" ColumnName="id_cita" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="Pet_StoreModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="domicilio" ColumnName="domicilio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consultas">
+            <EntityTypeMapping TypeName="Pet_StoreModel.consulta">
+              <MappingFragment StoreEntitySet="consulta">
+                <ScalarProperty Name="Id_consulta" ColumnName="Id_consulta" />
+                <ScalarProperty Name="id_cita" ColumnName="id_cita" />
+                <ScalarProperty Name="Id_Venta" ColumnName="Id_Venta" />
+                <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+                <ScalarProperty Name="id_mascota" ColumnName="id_mascota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empleadoes">
+            <EntityTypeMapping TypeName="Pet_StoreModel.empleado">
+              <MappingFragment StoreEntitySet="empleado">
+                <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="salario" ColumnName="salario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mascotas">
+            <EntityTypeMapping TypeName="Pet_StoreModel.mascota">
+              <MappingFragment StoreEntitySet="mascota">
+                <ScalarProperty Name="id_mascota" ColumnName="id_mascota" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="raza" ColumnName="raza" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ventas">
+            <EntityTypeMapping TypeName="Pet_StoreModel.venta">
+              <MappingFragment StoreEntitySet="venta">
+                <ScalarProperty Name="Id_Venta" ColumnName="Id_Venta" />
+                <ScalarProperty Name="costo_bruto" ColumnName="costo_bruto" />
+                <ScalarProperty Name="costo_neto" ColumnName="costo_neto" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
